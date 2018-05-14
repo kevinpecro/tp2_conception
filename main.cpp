@@ -2,6 +2,23 @@
 
 using namespace std;
 
+class vecteur2
+{
+    protected:
+    	int n;
+    	int *tab;
+
+    public:
+    	vecteur2(int);
+    	vecteur2(int,int*);
+    	~vecteur2();
+    	void initialise(int,int*);
+    	void affiche();
+    	void homothetie(int);
+    	int scalaire(vecteur2);
+
+};
+
 class matrice :public vecteur2
 {
 	protected :
