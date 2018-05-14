@@ -1,4 +1,16 @@
 
+#include <iostream>
+
+using namespace std;
+
+class matrice
+{
+private:
+
+public:
+
+}
+
 matrice::matrice(int pnbl,int pnbc):vecteur2(pnbl*pnbc)
 {
     nbl=pnbl; nbc=pnbc;
