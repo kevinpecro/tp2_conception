@@ -9,6 +9,7 @@ class vecteur2
 	    	int *tab;
 
 	    public:
+	    	vecteur2();
 	    	vecteur2(int);
 	    	vecteur2(int,int*);
 	    	vecteur2(const vecteur2&);
@@ -19,6 +20,11 @@ class vecteur2
 	    	int scalaire(vecteur2);
 
 	};
+
+	vecteur2::vecteur2()
+	{
+		tab=NULL;
+	}
 
 	vecteur2::vecteur2(int x)
 	{
