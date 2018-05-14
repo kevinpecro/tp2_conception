@@ -21,24 +21,6 @@ class vecteur2
 
 	};
 
-	class vecteur2
-	{
-	    private:
-	    	int n;
-	    	int *tab;
-
-	    public:
-	    	vecteur2(int);
-	    	vecteur2(int,int*);
-	    	vecteur2(const vecteur2&);
-	    	~vecteur2();
-	    	void initialise(int,int*);
-	    	void affiche();
-	    	void homothetie(int);
-	    	int scalaire(vecteur2);
-
-	};
-
 	vecteur2::vecteur2(int x)
 	{
 	    n=x;
@@ -113,7 +95,7 @@ class vecteur2
 	    return s;
 	}
 
-class matrice : public vecteur2
+
 class matrice:public vecteur2
 {
 	protected :
@@ -127,7 +109,7 @@ class matrice:public vecteur2
     	~matrice();
     	matrice(const matrice&);
     	matrice& operator=(const matrice&);
-    	void affiche 
+    	void affiche();
 }
 
 matrice::matrice(const matrice& s)
@@ -153,6 +135,16 @@ matrice::matrice(int pnbl,int pnbc):vecteur2(pnbl*pnbc)
     nbl=pnbl; nbc=pnbc;
 }
 
+}
+
+void matrice::affiche()
+{
+    for(int i=0; i<nbl;i++)
+    {
+        for(int j=0; j<nbr;j++)
+            cout<<tab[i*nb<+j]<<"\t";
+        cout<<endl;
+    }
 }
 
 
