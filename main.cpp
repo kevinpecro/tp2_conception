@@ -1,4 +1,3 @@
-
 #include <iostream>
 
 using namespace std;
@@ -96,7 +95,7 @@ class vecteur2
 	}
 
 
-class matrice:public vecteur2
+class matrice : public vecteur2
 {
 	protected :
 	int nbl,nbc;
@@ -112,16 +111,9 @@ class matrice:public vecteur2
     	void affiche();
 }
 
-matrice::matrice(const matrice& s)
+matrice::matrice(const matrice& s):vecteur2(s)
 {
-    tab=new char[nbl=s.nbl][nbr=s.nbr];
-    for(int i=0; i<nbl;i++)
-    {
-        for(int j=0; j<nbr;j++)
-            tab[i]=s.tab[i];
-    }
-
-
+    nbl=s.nbl;nbc=s.nbc;
 }
 
 matrice::matrice():vecteur2()
@@ -135,6 +127,18 @@ matrice::matrice(int pnbl,int pnbc):vecteur2(pnbl*pnbc)
     nbl=pnbl; nbc=pnbc;
 }
 
+matrice::~matrice(){}
+
+matrice& matrice::operator=(const matrice& s)
+{
+	vecteur2 *mg, *md;
+	mg=this; md=&s;
+	*mg = *md;
+	if(this!=&s)
+	{
+
+	}
+	return *this;
 }
 
 void matrice::affiche()
