@@ -114,6 +114,7 @@ class vecteur2
 	}
 
 class matrice : public vecteur2
+class matrice:public vecteur2
 {
 	protected :
 	int nbl,nbc;
@@ -126,10 +127,20 @@ class matrice : public vecteur2
     	~matrice();
     	matrice(const matrice&);
     	matrice& operator=(const matrice&);
-    	void affiche();
+    	void affiche 
 }
 
+matrice::matrice(const matrice& s)
+{
+    tab=new char[nbl=s.nbl][nbr=s.nbr];
+    for(int i=0; i<nbl;i++)
+    {
+        for(int j=0; j<nbr;j++)
+            tab[i]=s.tab[i];
+    }
 
+
+}
 
 matrice::matrice():vecteur2()
 {
@@ -138,14 +149,10 @@ matrice::matrice():vecteur2()
 }
 
 matrice::matrice(int pnbl,int pnbc):vecteur2(pnbl*pnbc)
-
 {
     nbl=pnbl; nbc=pnbc;
 }
 
-matrice::matrice(int pnbl, int pnbc, int* ptab): vecteur2(pnbl*pnbc, ptab)
-{
-	nbl= pnbl; nbc:pnbc;
 }
 
 
